@@ -1,0 +1,9 @@
+﻿city,urban_form_variable,mean_within_observed_spearman,positive_quintiles,tested_quintiles,min_n
+Marseille,Apartment/multifamily share,0.4581231815507791,5,5,64
+Marseille,Height,0.6135114885114884,5,5,64
+Marseille,Population density,0.5256239593739593,5,5,64
+Marseille,Urban-form composite,0.580731351981352,5,5,64
+Sydney,Apartment/multifamily share,0.5016346223213969,5,5,79
+Sydney,Height,0.7424823111808684,5,5,79
+Sydney,Population density,0.5930237920735104,5,5,79
+Sydney,Urban-form composite,0.6955127098288485,5,5,79

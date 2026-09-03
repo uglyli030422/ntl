@@ -1,0 +1,5 @@
+﻿city,model_name,bias_metric,standardized_beta,cluster_robust_se,ci_lower,ci_upper,p_value,n_spatial_units,n_observations,sample_level,vulnerability_definition
+Tokyo,random_forest,relative_bias,0.1516848042476951,0.013773647630997652,0.1246884548909397,0.1786811536044505,3.3197084660902705e-28,3296,79104,monthly_panel_fe,vulnerability_z
+Tokyo,random_forest,log_bias,0.17022038432012526,0.012871531977148847,0.1449921816449135,0.19544858699533701,6.330416498298179e-40,3296,79104,monthly_panel_fe,vulnerability_z
+Tokyo,random_forest,standardized_residual,0.16926404516442733,0.013243841663993141,0.14330611550300076,0.1952219748258539,2.1048017609596026e-37,3296,79104,monthly_panel_fe,vulnerability_z
+Tokyo,random_forest,symmetric_bias,0.16985262710650406,0.012617178230980014,0.14512295777378323,0.1945822964392249,2.6168578075219547e-41,3296,79104,monthly_panel_fe,vulnerability_z

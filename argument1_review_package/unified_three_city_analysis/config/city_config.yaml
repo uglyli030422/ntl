@@ -1,0 +1,140 @@
+project_root: .
+random_state: 42
+model:
+  name: rf_ntl_only
+  n_estimators: 500
+  min_samples_leaf: 5
+  max_features: sqrt
+  n_jobs: -1
+cv:
+  n_splits: 5
+bootstrap:
+  n_iterations: 500
+  random_state: 42
+thresholds: [0.10, 0.20, 0.25, 0.30]
+cities:
+  tokyo:
+    display_name: Tokyo
+    input_path: ntl_power_model_predictions.parquet
+    spatial_unit_id: mesh_code
+    time_field: month
+    observed_electricity: true_electricity
+    ntl_field: ntl
+    lon_field: null
+    lat_field: null
+    existing_prediction: pred_rf_ntl_only
+    existing_relative_bias: rel_bias_rf_ntl_only
+    vulnerability_field: null
+    vulnerability_positive:
+      - aging_rate
+      - foreign_rate
+      - rent_home_rate
+    vulnerability_negative:
+      - own_home_rate
+    vulnerability_sensitivity_positive:
+      - aging_rate
+      - foreign_rate
+      - rent_home_rate
+      - apartment_rate
+    vulnerability_sensitivity_negative:
+      - own_home_rate
+    social_indicators:
+      - aging_rate
+      - foreign_rate
+      - rent_home_rate
+      - own_home_rate
+      - apartment_rate
+      - avg_land_price
+    built_form_indicators:
+      - weighted_avg_height
+      - max_height
+      - apartment_rate
+      - pop_density
+      - bldg_count
+      - roof_area
+    height_field: weighted_avg_height
+    apartment_field: apartment_rate
+    invalid_rules:
+      observed_positive: true
+      ntl_nonnegative: true
+  amsterdam:
+    display_name: Amsterdam
+    input_path: amsterdam_ntl_bias_analysis/amsterdam_buurt_ntl_rf_bias_with_ghsl_height.parquet
+    spatial_unit_id: region_code
+    time_field: null
+    observed_electricity: avg_electricity_delivery_kwh
+    ntl_field: ntl_mean
+    lon_field: null
+    lat_field: null
+    existing_prediction: pred_avg_electricity_rf_ntl_only
+    existing_relative_bias: rel_bias_avg_electricity_rf_ntl_only
+    vulnerability_field: social_vulnerability
+    vulnerability_positive: []
+    vulnerability_negative: []
+    social_indicators:
+      - rental_housing_pct
+      - poverty_persons_pct
+      - origin_outside_europe_pct
+      - social_assistance_pct
+      - unemployment_benefit_pct
+      - low_education_pct
+      - owner_occupied_pct
+      - avg_income_per_resident_1000eur
+    built_form_indicators:
+      - ghsl_mean_building_height_m
+      - ghsl_median_building_height_m
+      - ghsl_max_building_height_m
+      - multi_family_housing_pct
+      - housing_density_per_ha
+      - population_density
+      - address_density
+    height_field: ghsl_mean_building_height_m
+    apartment_field: multi_family_housing_pct
+    invalid_rules:
+      observed_positive: true
+      ntl_nonnegative: true
+  london:
+    display_name: London
+    input_path: uk_lsoa_bias_analysis/london/uk_london_lsoa_ntl_rf_bias_with_attributes_height.parquet
+    spatial_unit_id: LSOA21CD
+    time_field: null
+    observed_electricity: mean_domestic_electricity_kwh_per_meter
+    ntl_field: ntl_mean
+    lon_field: LONG
+    lat_field: LAT
+    existing_prediction: pred_mean_electricity_rf_ntl_only
+    existing_relative_bias: rel_bias_pct
+    vulnerability_field: social_vulnerability
+    vulnerability_positive: []
+    vulnerability_negative: []
+    social_indicators:
+      - rental_housing_pct
+      - social_rented_pct
+      - private_rented_pct
+      - unemployment_pct
+      - inactive_pct
+      - no_qualification_pct
+      - non_white_pct
+      - non_uk_born_pct
+      - household_deprived_2plus_pct
+      - bedroom_overcrowded_pct
+      - index_of_multiple_deprivation_imd_score
+      - education_skills_and_training_score
+      - health_deprivation_and_disability_score
+      - living_environment_score
+      - owner_occupied_pct
+      - employment_pct
+      - high_qualification_pct
+    built_form_indicators:
+      - ghsl_mean_building_height_m
+      - ghsl_median_building_height_m
+      - ghsl_max_building_height_m
+      - flat_apartment_pct
+      - detached_pct
+      - semi_detached_pct
+      - terraced_pct
+    height_field: ghsl_mean_building_height_m
+    apartment_field: flat_apartment_pct
+    invalid_rules:
+      observed_positive: true
+      ntl_nonnegative: true

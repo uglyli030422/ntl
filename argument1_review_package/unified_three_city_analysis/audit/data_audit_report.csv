@@ -1,0 +1,4 @@
+﻿city,input_path,analysis_level,rows_raw,rows_valid,rows_removed,vulnerability_note,observed_nonpositive_raw,ntl_negative_raw,spatial_units_main
+Tokyo,ntl_power_model_predictions.parquet,spatial_unit_main,79104,79104,0,"Composite z-score from positive=['aging_rate', 'foreign_rate', 'rent_home_rate'], negative=['own_home_rate'].",0,0,3296
+Amsterdam,amsterdam_ntl_bias_analysis/amsterdam_buurt_ntl_rf_bias_with_ghsl_height.parquet,spatial_unit_main,454,454,0,"Existing field: social_vulnerability, city-standardized.",0,0,454
+London,uk_lsoa_bias_analysis/london/uk_london_lsoa_ntl_rf_bias_with_attributes_height.parquet,spatial_unit_main,4994,4994,0,"Existing field: social_vulnerability, city-standardized.",0,0,4994

@@ -1,0 +1,41 @@
+﻿city,observed_quintile,urban_form_variable,n,spearman_form_vs_ntl
+Marseille,1,Height,65,0.7543706293706294
+Marseille,1,Population density,65,0.414291958041958
+Marseille,1,Apartment/multifamily share,65,0.24775809921246505
+Marseille,1,Urban-form composite,65,0.6184003496503496
+Marseille,2,Height,64,0.6630494505494504
+Marseille,2,Population density,64,0.5108974358974359
+Marseille,2,Apartment/multifamily share,64,0.3850732600732601
+Marseille,2,Urban-form composite,64,0.6121336996336996
+Marseille,3,Height,64,0.4110347985347985
+Marseille,3,Population density,64,0.3816849816849816
+Marseille,3,Apartment/multifamily share,64,0.40166674340382286
+Marseille,3,Urban-form composite,64,0.3677655677655677
+Marseille,4,Height,64,0.5583333333333332
+Marseille,4,Population density,64,0.6462454212454212
+Marseille,4,Apartment/multifamily share,64,0.6432692307692307
+Marseille,4,Urban-form composite,64,0.6428113553113551
+Marseille,5,Height,64,0.6807692307692308
+Marseille,5,Population density,64,0.675
+Marseille,5,Apartment/multifamily share,64,0.6128485742951169
+Marseille,5,Urban-form composite,64,0.6625457875457874
+Sydney,1,Height,80,0.6652324286300487
+Sydney,1,Population density,80,0.45654493229380383
+Sydney,1,Apartment/multifamily share,80,0.4851046368485843
+Sydney,1,Urban-form composite,80,0.605885456357348
+Sydney,2,Height,80,0.6250351617440225
+Sydney,2,Population density,80,0.37011251758087205
+Sydney,2,Apartment/multifamily share,80,0.3206282231598688
+Sydney,2,Urban-form composite,80,0.5401781528363807
+Sydney,3,Height,79,0.8116845180136318
+Sydney,3,Population density,79,0.6272638753651413
+Sydney,3,Apartment/multifamily share,79,0.44330574488802343
+Sydney,3,Urban-form composite,79,0.6820107108081792
+Sydney,4,Height,80,0.8103375527426162
+Sydney,4,Population density,80,0.746741678387248
+Sydney,4,Apartment/multifamily share,80,0.6095171120487576
+Sydney,4,Urban-form composite,80,0.8074308485700892
+Sydney,5,Height,80,0.8001218947740227
+Sydney,5,Population density,80,0.7644559567404872
+Sydney,5,Apartment/multifamily share,80,0.6496173946617503
+Sydney,5,Urban-form composite,80,0.8420583805722454
