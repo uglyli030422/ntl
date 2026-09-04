@@ -18,7 +18,8 @@ In the four-argument structure, the logic is:
 - `scripts/`
   - `build_appendix_a2_experiments.py`: Generates Tables S3a-S3c for electricity-SVI coupling and missed-risk concentration diagnostics.
   - `transfer_validate_core_to_external_cities.py`: Fits the nighttime-light-to-electricity model using Tokyo, Amsterdam, and London, then directly predicts Marseille and Sydney.
-  - `make_main_figure2_statistical_blooming.py`: Rebuilds the main Argument 2 figure, `Figure2_statistical_blooming_v1`.
+  - `make_main_figure2_statistical_compression.py`: Rebuilds the main Argument 2 figure, `Figure2_statistical_compression_mechanism_v1`.
+  - `make_main_figure2_statistical_blooming.py`: Archived earlier main Argument 2 figure script, `Figure2_statistical_blooming_v1`.
 - `data/`
   - `city_bias_metrics.csv`: Harmonized core-city unit table used for the three-city error analysis.
   - `marseille_fine_scale_bias.csv`: Fine-scale Marseille validation-city input table.
@@ -41,6 +42,8 @@ In the four-argument structure, the logic is:
   - `core_to_external_transfer_svi_deciles.csv`: Residual summaries by SVI decile.
   - `core_to_external_transfer_unit_predictions.csv`: Unit-level core-city and validation-city prediction results.
 - `figures/main/`
+  - `Figure2_statistical_compression_mechanism_v1.png`
+  - `Figure2_statistical_compression_mechanism_v1.svg`
   - `Figure2_statistical_blooming_v1.png`
   - `Figure2_statistical_blooming_v1.svg`
 - `figures/supplementary/`
@@ -54,7 +57,7 @@ Run the scripts from the parent directory of this package:
 ```bash
 python argument2_review_package/scripts/build_appendix_a2_experiments.py
 python argument2_review_package/scripts/transfer_validate_core_to_external_cities.py
-python argument2_review_package/scripts/make_main_figure2_statistical_blooming.py
+python argument2_review_package/scripts/make_main_figure2_statistical_compression.py
 ```
 
 The scripts use package-relative paths and read from the local `data/` and `outputs/` folders. They do not depend on fixed machine-specific paths.
