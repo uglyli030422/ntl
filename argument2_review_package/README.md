@@ -1,45 +1,45 @@
-# Argument 2 review package
+# Argument 2 Review Package
 
-本文件夹整理的是论文拆分后的“论点2”相关代码、数据、结果和图件。
+This folder contains the code, analysis-ready data, outputs, and figures for Argument 2 in the revised manuscript structure.
 
-## 论点2的定位
+## Argument Scope
 
-论点2不是继续证明“SVI 导致夜光误差”，而是分解论点1中观察到的脆弱性-误差梯度：低实测用电社区更容易被有限信息的夜光代理高估，而低实测用电又与高 SVI 社区在空间上部分重叠。因此，边际上的 SVI-误差梯度主要来自“低用电端统计压缩 + 低用电与脆弱性共聚”，而不是一个单独的 SVI 因果机制。
+Argument 2 decomposes the vulnerability-error gradient reported in Argument 1. It does not claim that socioeconomic vulnerability directly causes nighttime-light prediction error. Instead, it tests whether the marginal SVI-error gradient is largely explained by two linked patterns: low observed-electricity units are more susceptible to calibration compression in low-information nighttime-light proxy models, and low observed electricity is socially concentrated in higher-SVI areas.
 
-对应论文表述可概括为：
+In the four-argument structure, the logic is:
 
-- 论点1：正向夜光电力代理误差集中暴露在高 SVI 社区。
-- 论点2：实测用电控制与同用电分层显示，这个梯度主要由低用电端校准误差和低用电-SVI 共聚解释。
-- 论点3：城市形态进一步解释相同实测用电下夜光可见性为何不同。
-- 论点4：上述误差会影响脆弱低用电区域的筛查。
+- Argument 1: Positive nighttime-light electricity-proxy error is concentrated in high-SVI communities.
+- Argument 2: Observed-electricity controls and within-electricity strata show that this gradient mainly reflects low-electricity calibration compression combined with low-electricity/SVI co-location.
+- Argument 3: Urban form further explains why units with similar observed electricity can have different nighttime-light visibility.
+- Argument 4: These error patterns affect screening for vulnerable low-electricity areas.
 
-## 文件结构
+## Folder Structure
 
 - `scripts/`
-  - `build_appendix_a2_experiments.py`：生成 Table S3a-S3c，检验低用电与高 SVI 的共聚，以及低夜光筛查的漏识别集中性。
-  - `transfer_validate_core_to_external_cities.py`：用 Tokyo、Amsterdam、London 三个核心城市训练夜光-用电模型，并直接预测 Marseille、Sydney，输出两城外部验证结果。
-  - `make_main_figure2_statistical_blooming.py`：生成论点2主图 `Figure2_statistical_blooming_v1`。
+  - `build_appendix_a2_experiments.py`: Generates Tables S3a-S3c for electricity-SVI coupling and missed-risk concentration diagnostics.
+  - `transfer_validate_core_to_external_cities.py`: Fits the nighttime-light-to-electricity model using Tokyo, Amsterdam, and London, then directly predicts Marseille and Sydney.
+  - `make_main_figure2_statistical_blooming.py`: Rebuilds the main Argument 2 figure, `Figure2_statistical_blooming_v1`.
 - `data/`
-  - `city_bias_metrics.csv`：三个核心城市的统一误差分析单元。
-  - `marseille_fine_scale_bias.csv`：Marseille 外部验证城市细尺度输入。
-  - `sydney_ausgrid_fine_scale_bias.csv`：Sydney 外部验证城市细尺度输入。
-  - `result3_multithreshold_luminous_poverty_labels.csv`：用于 A2 低用电-高 SVI 共聚与漏识别诊断的核心城市标签表。
+  - `city_bias_metrics.csv`: Harmonized core-city unit table used for the three-city error analysis.
+  - `marseille_fine_scale_bias.csv`: Fine-scale Marseille validation-city input table.
+  - `sydney_ausgrid_fine_scale_bias.csv`: Fine-scale Sydney validation-city input table.
+  - `result3_multithreshold_luminous_poverty_labels.csv`: Core-city label table used for Appendix A.2 diagnostics.
 - `outputs/result2_observed_electricity_controls/`
-  - `svi_bias_regression_with_observed_control.csv`：SVI-误差梯度在加入实测用电控制前后的变化。
-  - `svi_gradient_within_observed_electricity_quintiles.csv`：各城市实测用电五分位内的 SVI 梯度。
-  - `svi_gradient_pooled_within_observed_quintiles.csv`：同用电五分位内合并估计的 SVI 梯度。
-  - `calibration_by_observed_electricity_decile.csv`：按实测用电十分位的校准曲线数据。
-  - `supplementary_observed_electricity_control_and_calibration.*`：对应补充图。
+  - `svi_bias_regression_with_observed_control.csv`: Change in the SVI-error gradient after observed-electricity adjustment.
+  - `svi_gradient_within_observed_electricity_quintiles.csv`: City-specific SVI gradients within observed-electricity quintiles.
+  - `svi_gradient_pooled_within_observed_quintiles.csv`: Pooled within-quintile SVI-gradient estimates.
+  - `calibration_by_observed_electricity_decile.csv`: Calibration summaries by observed-electricity decile.
+  - `supplementary_observed_electricity_control_and_calibration.*`: Supplementary observed-electricity control and calibration figure.
 - `outputs/appendix_a2_vulnerability_error_experiments/`
-  - `table_s3a_electricity_svi_coupling.csv`：低实测用电和高 SVI 的共聚程度。
-  - `table_s3b_screening_baselines.csv`：低夜光规则与随机/同用电中性基线的漏识别比较。
-  - `table_s3c_social_concentration_of_missed_low_electricity.csv`：漏识别低用电单元的社会集中性。
-  - `appendix_a2_experiment_summary.md`：以上结果的文字摘要。
+  - `table_s3a_electricity_svi_coupling.csv`: Coupling between low observed electricity and high SVI.
+  - `table_s3b_screening_baselines.csv`: Missed-risk diagnostics compared with random and within-electricity neutral baselines.
+  - `table_s3c_social_concentration_of_missed_low_electricity.csv`: Social concentration of missed low-electricity units.
+  - `appendix_a2_experiment_summary.md`: Short text summary of the Appendix A.2 results.
 - `outputs/external_transfer_validation_core_to_new_cities/`
-  - `core_to_external_transfer_observed_control_table.csv`：五城 observed-electricity control 表，含 Marseille/Sydney。
-  - `core_to_external_transfer_summary.csv`：三核心城市 OOF 与两验证城市 direct-transfer 的残差-SVI 梯度摘要。
-  - `core_to_external_transfer_svi_deciles.csv`：按 SVI 十分位的残差摘要。
-  - `core_to_external_transfer_unit_predictions.csv`：核心城市和两验证城市的单元级预测结果。
+  - `core_to_external_transfer_observed_control_table.csv`: Five-city observed-electricity control table, including Marseille and Sydney.
+  - `core_to_external_transfer_summary.csv`: Core-city out-of-fold and validation-city direct-transfer residual-SVI summaries.
+  - `core_to_external_transfer_svi_deciles.csv`: Residual summaries by SVI decile.
+  - `core_to_external_transfer_unit_predictions.csv`: Unit-level core-city and validation-city prediction results.
 - `figures/main/`
   - `Figure2_statistical_blooming_v1.png`
   - `Figure2_statistical_blooming_v1.svg`
@@ -47,9 +47,9 @@
   - `Supplementary_observed_electricity_control_and_calibration.png`
   - `Supplementary_observed_electricity_control_and_calibration.svg`
 
-## 复现命令
+## Reproduction
 
-在本文件夹的上一级目录运行：
+Run the scripts from the parent directory of this package:
 
 ```bash
 python argument2_review_package/scripts/build_appendix_a2_experiments.py
@@ -57,15 +57,15 @@ python argument2_review_package/scripts/transfer_validate_core_to_external_citie
 python argument2_review_package/scripts/make_main_figure2_statistical_blooming.py
 ```
 
-这些脚本已改为读取本包内部的 `data/` 和 `outputs/` 路径，不依赖原电脑上的 `D:\ntl` 或其他固定路径。
+The scripts use package-relative paths and read from the local `data/` and `outputs/` folders. They do not depend on fixed machine-specific paths.
 
-## 关于 Marseille 和 Sydney
+## Marseille and Sydney
 
-Marseille 和 Sydney 不参与模型训练。它们在 `transfer_validate_core_to_external_cities.py` 中的角色是 `external_direct`：模型只使用 Tokyo、Amsterdam、London 拟合，然后直接预测 Marseille 和 Sydney 的标准化实测用电，并计算预测残差与 SVI 的关系。
+Marseille and Sydney are not used for model fitting. In `transfer_validate_core_to_external_cities.py`, their role is `external_direct`: the model is fitted on Tokyo, Amsterdam, and London, and then directly applied to Marseille and Sydney to predict standardized observed electricity and evaluate residual-SVI gradients.
 
-因此，两城在论点2中的作用是检查“低用电端统计压缩和 SVI-残差梯度”是否能在未参与训练的新城市中复现，而不是把两城加入训练集。
+The validation role of these two cities is therefore to test whether the low-electricity compression and residual-SVI gradient patterns appear in held-out cities, not to expand the training set.
 
-## 未包含内容
+## Exclusions
 
-- 本包不包含已经删除的“非夜光对照模型”相关脚本、表格或注释。
-- 本包不包含 147 MB 的 `city_out_of_fold_predictions.csv` 大表，以避免 GitHub 单文件 100 MB 限制。论点2复现所需结果已经通过包内较小的核心表和单元预测表提供。
+- The removed non-nighttime-light control-model analysis is not included in this package.
+- The 147 MB `city_out_of_fold_predictions.csv` table is not included because it exceeds GitHub's 100 MB single-file limit. Argument 2 can be reviewed using the smaller included outputs and unit-level transfer prediction table.
